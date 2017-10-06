@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Angular To-Do List</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	</head>
+	
+	<body>
+	
+		<div ng-app="todo" ng-controller="todoCtrl">
+			<form>
+				<input type="text" ng-model="tasktext"></input>
+				<input type="submit" ng-click="addTask()" value="Add Task">
+			</form>
+			
+			<ul>
+				<li ng-repeat="(id, tasktext) in tasklist">
+					{{ tasktext }} <input type="submit" ng-click="finishTask(id)" value="Done"></input>
+				</li>
+			</ul>
+		</div>
+	
+		<script src="todoApp.js"></script>
+		<script src="todoCtrl.js"></script>
+	</body>
+</html>
+		
